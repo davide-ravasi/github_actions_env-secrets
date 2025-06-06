@@ -8,6 +8,7 @@ env:
   MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
 jobs:
   test:
+    environment: env-secrets
     env:
       MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
@@ -30,12 +31,12 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
+        run: echo "MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
-          echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
+          echo "MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}"
+          echo "MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}"
