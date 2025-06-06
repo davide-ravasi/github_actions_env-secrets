@@ -39,4 +39,4 @@ jobs:
       - name: Output information
         run: |
           echo "MONGODB_DB_NAME $MONGODB_USERNAME"
-          echo "MONGODB_DB_NAME $MONGODB_PASSWORD"
+          echo "MONGODB_DB_NAME $MONGODB_USERNAME"
