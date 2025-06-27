@@ -2,8 +2,9 @@ name: Deployment (Container)
 on:
   push:
     branches:
-      - main
+      - master
       - dev
+      - test1
 env:
   CACHE_KEY: node-deps
   MONGODB_DB_NAME: ${ secrets.MONGODB_DB_NAME }
