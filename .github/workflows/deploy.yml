@@ -9,7 +9,7 @@ env:
   CACHE_KEY: node-deps
 jobs:
   test:
-    environment: testing
+    environment: env-secrets
     runs-on: ubuntu-latest
     container:
       image: node:20
